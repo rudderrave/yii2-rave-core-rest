@@ -1,8 +1,8 @@
 <?php
 
-namespace yeesoft\models;
+namespace ravesoft\models;
 
-use yeesoft\helpers\AuthHelper;
+use ravesoft\helpers\AuthHelper;
 use Yii;
 use yii\base\Action;
 use yii\db\Query;

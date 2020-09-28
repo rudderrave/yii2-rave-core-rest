@@ -1,12 +1,12 @@
 <?php
 
-namespace yeesoft\assets;
+namespace ravesoft\assets;
 
 use yii\web\AssetBundle;
 
 /**
  * Class MetisMenuAsset
- * @package yeesoft\assets
+ * @package ravesoft\assets
  */
 class MetisMenuAsset extends AssetBundle
 {

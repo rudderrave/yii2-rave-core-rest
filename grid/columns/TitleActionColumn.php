@@ -1,9 +1,9 @@
 <?php
 
-namespace yeesoft\grid\columns;
+namespace ravesoft\grid\columns;
 
 use Closure;
-use yeesoft\helpers\Html;
+use ravesoft\helpers\Html;
 use Yii;
 
 /**
@@ -152,7 +152,7 @@ class TitleActionColumn extends \yii\grid\DataColumn
      * Creates a URL for the given action and model.
      * This method is called for each button and each row.
      * @param string $action the button name (or action ID)
-     * @param \yeesoft\db\ActiveRecord $model the data model
+     * @param \ravesoft\db\ActiveRecord $model the data model
      * @param mixed $key the key associated with the data model
      * @param integer $index the current row index
      * @return string the created URL

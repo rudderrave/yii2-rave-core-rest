@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\widgets\assets;
+namespace ravesoft\widgets\assets;
 
 use yii\web\AssetBundle;
 use yii\web\JqueryAsset;
@@ -8,7 +8,7 @@ use yii\web\JqueryAsset;
 /**
  * Class LanguageSelectorAsset
  * 
- * @package yeesoft\widgets\assets
+ * @package ravesoft\widgets\assets
  */
 class LanguageSelectorAsset extends AssetBundle
 {

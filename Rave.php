@@ -260,7 +260,7 @@ class Rave extends Component
     protected function registerTranslations()
     {
         Yii::$app->i18n->translations['yee*'] = [
-            'class' => 'yeesoft\db\DbMessageSource',
+            'class' => 'ravesoft\db\DbMessageSource',
             'sourceLanguage' => 'en-US',
             'enableCaching' => true,
         ];
@@ -276,7 +276,7 @@ class Rave extends Component
         }
 
         if (!in_array(Yii::$app->language, array_keys($this->languages))) {
-            throw new InvalidConfigException('Invalid language settings! Default application language should be included into `yeesoft\Yee::$languages` setting.');
+            throw new InvalidConfigException('Invalid language settings! Default application language should be included into `ravesoft\Yee::$languages` setting.');
         }
         
         if(!empty(array_diff(array_keys($this->languageRedirects), array_keys($this->languages)))){

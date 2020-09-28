@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\models;
+namespace ravesoft\models;
 
 /**
  * Interface to implement functions to check owner rights.
@@ -8,7 +8,7 @@ namespace yeesoft\models;
 interface OwnerAccess
 {
 
-    const CLASSNAME = 'yeesoft\models\OwnerAccess';
+    const CLASSNAME = 'ravesoft\models\OwnerAccess';
 
     /**
      * Get permission to check whether the access is denied to users who are not authors of item.

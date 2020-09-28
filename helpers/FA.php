@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\helpers;
+namespace ravesoft\helpers;
 
 use rmrevin\yii\fontawesome\FA as ParentFA;
 use yii\helpers\ArrayHelper;

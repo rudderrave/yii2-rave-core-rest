@@ -1,9 +1,9 @@
 <?php
 
-namespace yeesoft\models;
+namespace ravesoft\models;
 
-use yeesoft\helpers\AuthHelper;
-use yeesoft\helpers\YeeHelper;
+use ravesoft\helpers\AuthHelper;
+use ravesoft\helpers\YeeHelper;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\helpers\ArrayHelper;

@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\components;
+namespace ravesoft\components;
 
 use Yii;
 use yii\base\Component;
@@ -29,7 +29,7 @@ class Settings extends Component
     /**
      * @var string Setting model. Make sure your settings model calls clearCache in the afterSave callback
      */
-    public $modelClass = 'yeesoft\models\Setting';
+    public $modelClass = 'ravesoft\models\Setting';
 
     /**
      * @var Cache|string the cache object or the application component ID of the cache object.

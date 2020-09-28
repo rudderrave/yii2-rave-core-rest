@@ -1,6 +1,6 @@
 <?php
 
-use yeesoft\db\PermissionsMigration;
+use ravesoft\db\PermissionsMigration;
 
 class m150821_140141_add_core_permissions extends PermissionsMigration
 {

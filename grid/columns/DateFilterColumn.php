@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\grid\columns;
+namespace ravesoft\grid\columns;
 
 use yii\grid\DataColumn;
 use yii\helpers\Html;

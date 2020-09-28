@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\models;
+namespace ravesoft\models;
 
 use Yii;
 
@@ -16,7 +16,7 @@ use Yii;
  *
  * @author Taras Makitra <makitrataras@gmail.com>
  */
-class Setting extends \yeesoft\db\ActiveRecord
+class Setting extends \ravesoft\db\ActiveRecord
 {
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\grid\columns;
+namespace ravesoft\grid\columns;
 
 use Yii;
 use yii\base\InvalidConfigException;

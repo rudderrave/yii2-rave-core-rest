@@ -1,6 +1,6 @@
 <?php
 
-use yeesoft\widgets\assets\LanguageSelectorAsset;
+use ravesoft\widgets\assets\LanguageSelectorAsset;
 use yii\helpers\ArrayHelper;
 
 LanguageSelectorAsset::register($this);

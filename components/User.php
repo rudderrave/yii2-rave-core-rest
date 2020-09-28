@@ -1,26 +1,26 @@
 <?php
 
-namespace yeesoft\components;
+namespace ravesoft\components;
 
-use yeesoft\helpers\AuthHelper;
+use ravesoft\helpers\AuthHelper;
 use Yii;
 use yii\helpers\Url;
 
 /**
  * Class User
- * @package yeesoft\components
+ * @package ravesoft\components
  */
 class User extends \yii\web\User
 {
     /**
      * @inheritdoc
      */
-    public $identityClass = 'yeesoft\models\User';
+    public $identityClass = 'ravesoft\models\User';
 
     /**
      * @inheritdoc
      */
-    public $settingsClass = 'yeesoft\models\UserSetting';
+    public $settingsClass = 'ravesoft\models\UserSetting';
 
     /**
      * Settings identity

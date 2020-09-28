@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\widgets;
+namespace ravesoft\widgets;
 
 abstract class DashboardWidget extends \yii\base\Widget
 {

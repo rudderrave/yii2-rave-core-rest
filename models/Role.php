@@ -1,9 +1,9 @@
 <?php
 
-namespace yeesoft\models;
+namespace ravesoft\models;
 
 use Exception;
-use yeesoft\helpers\AuthHelper;
+use ravesoft\helpers\AuthHelper;
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\rbac\DbManager;

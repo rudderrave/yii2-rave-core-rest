@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\widgets;
+namespace ravesoft\widgets;
 
 use yii\base\Object;
 use yii\helpers\Inflector;

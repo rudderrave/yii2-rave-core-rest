@@ -1,10 +1,10 @@
 <?php
 
-namespace yeesoft\models;
+namespace ravesoft\models;
 
 use Yii;
 use yii\base\Security;
-use yeesoft\db\ActiveRecord;
+use ravesoft\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
 

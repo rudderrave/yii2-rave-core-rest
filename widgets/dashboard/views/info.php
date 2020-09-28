@@ -1,5 +1,5 @@
 <?php
-use yeesoft\Yee;
+use ravesoft\Yee;
 
 /* @var $this yii\web\View */
 ?>

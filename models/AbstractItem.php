@@ -1,11 +1,11 @@
 <?php
 
-namespace yeesoft\models;
+namespace ravesoft\models;
 
-use yeesoft\helpers\AuthHelper;
+use ravesoft\helpers\AuthHelper;
 use Yii;
 use yii\behaviors\TimestampBehavior;
-use yeesoft\db\ActiveRecord;
+use ravesoft\db\ActiveRecord;
 use yii\helpers\Inflector;
 use yii\rbac\DbManager;
 

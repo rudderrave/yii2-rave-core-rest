@@ -1,11 +1,11 @@
 <?php
 
-namespace yeesoft\models;
+namespace ravesoft\models;
 
 use Ikimea\Browser\Browser;
-use yeesoft\helpers\YeeHelper;
+use ravesoft\helpers\YeeHelper;
 use Yii;
-use yeesoft\db\ActiveRecord;
+use ravesoft\db\ActiveRecord;
 
 /**
  * This is the model class for table "user_visit_log".

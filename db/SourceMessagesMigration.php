@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\db;
+namespace ravesoft\db;
 
 use yii\base\NotSupportedException;
 use yii\db\Migration;

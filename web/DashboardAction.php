@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\web;
+namespace ravesoft\web;
 
 use Yii;
 use yii\base\Action;

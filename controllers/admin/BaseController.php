@@ -1,20 +1,20 @@
 <?php
 
-namespace yeesoft\controllers\admin;
+namespace ravesoft\controllers\admin;
 
-use yeesoft\helpers\YeeHelper;
-use yeesoft\models\OwnerAccess;
-use yeesoft\models\User;
+use ravesoft\helpers\YeeHelper;
+use ravesoft\models\OwnerAccess;
+use ravesoft\models\User;
 use Yii;
 use yii\data\ActiveDataProvider;
-use yeesoft\db\ActiveRecord;
+use ravesoft\db\ActiveRecord;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use yii\helpers\StringHelper;
 use yii\web\Cookie;
 use yii\web\NotFoundHttpException;
 
-abstract class BaseController extends \yeesoft\controllers\BaseController
+abstract class BaseController extends \ravesoft\controllers\BaseController
 {
     /**
      * @var ActiveRecord
@@ -61,7 +61,7 @@ abstract class BaseController extends \yeesoft\controllers\BaseController
      *
      * @var string
      */
-//    public $layout = '@vendor/yeesoft/yii2-yee-core/views/layouts/admin/main.php';
+//    public $layout = '@vendor/ravesoft/yii2-yee-core/views/layouts/admin/main.php';
     public $layout = '@backend/views/layouts/main.php';
 
     /**
@@ -153,7 +153,7 @@ abstract class BaseController extends \yeesoft\controllers\BaseController
      */
     public function actionCreate()
     {
-        /* @var $model \yeesoft\db\ActiveRecord */
+        /* @var $model \ravesoft\db\ActiveRecord */
         $model = new $this->modelClass;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -174,7 +174,7 @@ abstract class BaseController extends \yeesoft\controllers\BaseController
      */
     public function actionUpdate($id)
     {
-        /* @var $model \yeesoft\db\ActiveRecord */
+        /* @var $model \ravesoft\db\ActiveRecord */
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) AND $model->save()) {
@@ -195,7 +195,7 @@ abstract class BaseController extends \yeesoft\controllers\BaseController
      */
     public function actionDelete($id)
     {
-        /* @var $model \yeesoft\db\ActiveRecord */
+        /* @var $model \ravesoft\db\ActiveRecord */
         $model = $this->findModel($id);
         $model->delete();
 
@@ -210,7 +210,7 @@ abstract class BaseController extends \yeesoft\controllers\BaseController
     public function actionToggleAttribute($attribute, $id)
     {
         //TODO: Restrict owner access
-        /* @var $model \yeesoft\db\ActiveRecord */
+        /* @var $model \ravesoft\db\ActiveRecord */
         $model = $this->findModel($id);
         $model->{$attribute} = ($model->{$attribute} == 1) ? 0 : 1;
         $model->save(false);

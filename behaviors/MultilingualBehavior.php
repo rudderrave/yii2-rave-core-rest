@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\behaviors;
+namespace ravesoft\behaviors;
 
 use Yii;
 

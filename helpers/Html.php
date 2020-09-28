@@ -1,8 +1,8 @@
 <?php
 
-namespace yeesoft\helpers;
+namespace ravesoft\helpers;
 
-use yeesoft\models\User;
+use ravesoft\models\User;
 
 /**
  * @inheritdoc

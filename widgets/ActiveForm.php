@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\widgets;
+namespace ravesoft\widgets;
 
 use Yii;
 
@@ -9,7 +9,7 @@ use Yii;
  */
 class ActiveForm extends \yii\bootstrap\ActiveForm
 {
-    public $fieldClass = 'yeesoft\widgets\ActiveField';
+    public $fieldClass = 'ravesoft\widgets\ActiveField';
 
     public function field($model, $attribute, $options = [])
     {

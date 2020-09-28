@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\db;
+namespace ravesoft\db;
 
 /**
  * @inheritdoc

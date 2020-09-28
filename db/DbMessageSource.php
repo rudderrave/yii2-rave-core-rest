@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yeesoft\db;
+namespace ravesoft\db;
 
 use Yii;
 use yii\base\InvalidConfigException;

@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\widgets\inputs;
+namespace ravesoft\widgets\inputs;
 
 use yii\widgets\InputWidget;
 use yii\helpers\Html;

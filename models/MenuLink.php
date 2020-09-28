@@ -1,14 +1,14 @@
 <?php
 
-namespace yeesoft\models;
+namespace ravesoft\models;
 
 use omgdef\multilingual\MultilingualQuery;
-use yeesoft\behaviors\MultilingualBehavior;
+use ravesoft\behaviors\MultilingualBehavior;
 use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\SluggableBehavior;
 use yii\behaviors\TimestampBehavior;
-use yeesoft\db\ActiveRecord;
+use ravesoft\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 
 /**

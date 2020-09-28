@@ -1,8 +1,8 @@
 <?php
 
-namespace yeesoft\widgets;
+namespace ravesoft\widgets;
 
-use yeesoft\models\User;
+use ravesoft\models\User;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -29,7 +29,7 @@ use yii\helpers\Html;
  *   [ 'class' => 'nav nav-third-level']
  * ]
  *
- * @package yeesoft\widgets
+ * @package ravesoft\widgets
  */
 class Nav extends \yii\bootstrap\Nav
 {

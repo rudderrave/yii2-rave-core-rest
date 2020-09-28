@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\controllers\admin;
+namespace ravesoft\controllers\admin;
 
 use yii\helpers\ArrayHelper;
 
@@ -20,7 +20,7 @@ class DashboardController extends BaseController
 
         return ArrayHelper::merge(parent::actions(), [
             'index' => [
-                'class' => 'yeesoft\web\DashboardAction',
+                'class' => 'ravesoft\web\DashboardAction',
                 'widgets' => $this->widgets,
             ]
         ]);

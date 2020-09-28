@@ -1,9 +1,9 @@
 <?php
 
-namespace yeesoft\widgets\dashboard;
+namespace ravesoft\widgets\dashboard;
 
-use yeesoft\widgets\DashboardWidget;
-use yeesoft\models\User;
+use ravesoft\widgets\DashboardWidget;
+use ravesoft\models\User;
 
 class Info extends DashboardWidget
 {

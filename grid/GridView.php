@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\grid;
+namespace ravesoft\grid;
 
 class GridView extends \yii\grid\GridView
 {

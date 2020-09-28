@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\models;
+namespace ravesoft\models;
 
 /**
  * This is the ActiveQuery class for [[Post]].

@@ -1,8 +1,8 @@
 <?php
 
-namespace yeesoft\controllers;
+namespace ravesoft\controllers;
 
-use yeesoft\behaviors\AccessFilter;
+use ravesoft\behaviors\AccessFilter;
 use Yii;
 use yii\web\Controller;
 use yii\web\Cookie;

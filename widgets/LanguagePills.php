@@ -1,8 +1,8 @@
 <?php
 
-namespace yeesoft\widgets;
+namespace ravesoft\widgets;
 
-use yeesoft\assets\LanguagePillsAsset;
+use ravesoft\assets\LanguagePillsAsset;
 use Yii;
 
 /**

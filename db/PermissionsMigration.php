@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\db;
+namespace ravesoft\db;
 
 /**
  * This class helps to create migrations for modules permissions. 

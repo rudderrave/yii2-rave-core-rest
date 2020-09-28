@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\widgets;
+namespace ravesoft\widgets;
 
 use Yii;
 use yii\helpers\ArrayHelper;

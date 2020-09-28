@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\helpers;
+namespace ravesoft\helpers;
 
 /**
  * A lot of useful and useless stuff

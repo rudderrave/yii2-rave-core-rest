@@ -1,5 +1,5 @@
 <?php
-namespace yeesoft\grid;
+namespace ravesoft\grid;
 
 use Yii;
 use yii\base\InvalidConfigException;

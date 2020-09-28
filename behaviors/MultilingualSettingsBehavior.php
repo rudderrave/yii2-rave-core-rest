@@ -1,10 +1,10 @@
 <?php
-namespace yeesoft\behaviors;
+namespace ravesoft\behaviors;
 
 use Yii;
 use yii\base\Behavior;
 use yii\base\InvalidConfigException;
-use yeesoft\db\ActiveRecord;
+use ravesoft\db\ActiveRecord;
 use yii\helpers\Inflector;
 use yii\validators\Validator;
 
@@ -112,7 +112,7 @@ class MultilingualSettingsBehavior extends Behavior
     /**
      * @inheritdoc
      *
-     * @var $owner yeesoft\settings\models\BaseSettingsModel
+     * @var $owner ravesoft\settings\models\BaseSettingsModel
      */
     public function attach($owner)
     {

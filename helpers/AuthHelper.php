@@ -1,11 +1,11 @@
 <?php
 
-namespace yeesoft\helpers;
+namespace ravesoft\helpers;
 
-use yeesoft\models\AbstractItem;
-use yeesoft\models\Permission;
-use yeesoft\models\Role;
-use yeesoft\models\Route;
+use ravesoft\models\AbstractItem;
+use ravesoft\models\Permission;
+use ravesoft\models\Role;
+use ravesoft\models\Route;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\helpers\Inflector;
