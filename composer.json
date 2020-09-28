@@ -1,0 +1,26 @@
+{
+    "name": "rudderrave/yii2-rave-core-rest",
+    "description": "Core Module For Rave CMS use Rest",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Rave",
+            "email": "rudder.rave@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0",
+        "ikimea/browser": "~1.14",
+        "yiisoft/yii2-jui": "~2.0",
+        "bower-asset/metisMenu": "*",
+        "omgdef/yii2-multilingual-behavior": "~2.0",
+        "rmrevin/yii2-fontawesome": "~2.12",
+        "tinymce/tinymce": "~4.5.0",
+        "rudderrave/yii2-recaptcha-widget": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "ravesoft\\": ""
+        }
+    }
+}
