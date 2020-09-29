@@ -16,7 +16,7 @@ class LanguagePills extends \yii\base\Widget
         LanguagePillsAsset::register($this->view);
 
         $content = '';
-        $languages = Yii::$app->yee->languages;
+        $languages = Yii::$app->rave->languages;
         $defaultLanguage = Yii::$app->language;
 
         if (count($languages) > 1) {

@@ -103,7 +103,7 @@ abstract class AbstractItem extends ActiveRecord
 
         foreach ($childrenNames as $childName) {
             Yii::$app->db->createCommand()
-                    ->delete(Yii::$app->yee->auth_item_child_table, ['parent' => $parentName, 'child' => $childName])
+                    ->delete(Yii::$app->rave->auth_item_child_table, ['parent' => $parentName, 'child' => $childName])
                     ->execute();
         }
 
@@ -143,7 +143,7 @@ abstract class AbstractItem extends ActiveRecord
      */
     public static function tableName()
     {
-        return Yii::$app->yee->auth_item_table;
+        return Yii::$app->rave->auth_item_table;
     }
 
     /**
@@ -183,8 +183,8 @@ abstract class AbstractItem extends ActiveRecord
      */
     public static function find()
     {
-        if(!Yii::$app->yee->auth) {
-            return parent::find()->andWhere([Yii::$app->yee->auth_item_table . '.type' => static::ITEM_TYPE]);
+        if(!Yii::$app->rave->auth) {
+            return parent::find()->andWhere([Yii::$app->rave->auth_item_table . '.type' => static::ITEM_TYPE]);
         }
         $client = new RestClient();
         $response = $client->CreateRequest()
@@ -199,14 +199,14 @@ abstract class AbstractItem extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => Yii::t('yee', 'Code'),
-            'description' => Yii::t('yee', 'Role'),
-            'rule_name' => Yii::t('yee', 'Rule'),
-            'group_code' => Yii::t('yee', 'Group'),
-            'data' => Yii::t('yee', 'Data'),
-            'type' => Yii::t('yee', 'Type'),
-            'created_at' => Yii::t('yee', 'Created'),
-            'updated_at' => Yii::t('yee', 'Updated'),
+            'name' => Yii::t('rave', 'Code'),
+            'description' => Yii::t('rave', 'Role'),
+            'rule_name' => Yii::t('rave', 'Rule'),
+            'group_code' => Yii::t('rave', 'Group'),
+            'data' => Yii::t('rave', 'Data'),
+            'type' => Yii::t('rave', 'Type'),
+            'created_at' => Yii::t('rave', 'Created'),
+            'updated_at' => Yii::t('rave', 'Updated'),
         ];
     }
 

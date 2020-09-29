@@ -2,7 +2,7 @@
 
 namespace ravesoft\controllers\admin;
 
-use ravesoft\helpers\YeeHelper;
+use ravesoft\helpers\RaveHelper;
 use ravesoft\models\OwnerAccess;
 use ravesoft\models\User;
 use Yii;
@@ -61,7 +61,7 @@ abstract class BaseController extends \ravesoft\controllers\BaseController
      *
      * @var string
      */
-//    public $layout = '@vendor/ravesoft/yii2-yee-core/views/layouts/admin/main.php';
+//    public $layout = '@vendor/ravesoft/yii2-rave-core/views/layouts/admin/main.php';
     public $layout = '@backend/views/layouts/main.php';
 
     /**
@@ -112,7 +112,7 @@ abstract class BaseController extends \ravesoft\controllers\BaseController
     {
         $modelClass = $this->modelClass;
         $searchModel = $this->modelSearchClass ? new $this->modelSearchClass : null;
-        $restrictAccess = (YeeHelper::isImplemented($modelClass, OwnerAccess::CLASSNAME)
+        $restrictAccess = (RaveHelper::isImplemented($modelClass, OwnerAccess::CLASSNAME)
             && !User::hasPermission($modelClass::getFullAccessPermission()));
 
         if ($searchModel) {
@@ -157,7 +157,7 @@ abstract class BaseController extends \ravesoft\controllers\BaseController
         $model = new $this->modelClass;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('crudMessage', Yii::t('yee', 'Your item has been created.'));
+            Yii::$app->session->setFlash('crudMessage', Yii::t('rave', 'Your item has been created.'));
             return $this->redirect($this->getRedirectPage('create', $model));
         }
 
@@ -178,7 +178,7 @@ abstract class BaseController extends \ravesoft\controllers\BaseController
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) AND $model->save()) {
-            Yii::$app->session->setFlash('crudMessage', Yii::t('yee', 'Your item has been updated.'));
+            Yii::$app->session->setFlash('crudMessage', Yii::t('rave', 'Your item has been updated.'));
             return $this->redirect($this->getRedirectPage('update', $model));
         }
 
@@ -199,7 +199,7 @@ abstract class BaseController extends \ravesoft\controllers\BaseController
         $model = $this->findModel($id);
         $model->delete();
 
-        Yii::$app->session->setFlash('crudMessage', Yii::t('yee', 'Your item has been deleted.'));
+        Yii::$app->session->setFlash('crudMessage', Yii::t('rave', 'Your item has been deleted.'));
         return $this->redirect($this->getRedirectPage('delete', $model));
     }
 
@@ -223,7 +223,7 @@ abstract class BaseController extends \ravesoft\controllers\BaseController
     {
         if (Yii::$app->request->post('selection')) {
             $modelClass = $this->modelClass;
-            $restrictAccess = (YeeHelper::isImplemented($modelClass, OwnerAccess::CLASSNAME)
+            $restrictAccess = (RaveHelper::isImplemented($modelClass, OwnerAccess::CLASSNAME)
                 && !User::hasPermission($modelClass::getFullAccessPermission()));
             $where = ['id' => Yii::$app->request->post('selection', [])];
 
@@ -242,7 +242,7 @@ abstract class BaseController extends \ravesoft\controllers\BaseController
     {
         if (Yii::$app->request->post('selection')) {
             $modelClass = $this->modelClass;
-            $restrictAccess = (YeeHelper::isImplemented($modelClass, OwnerAccess::CLASSNAME)
+            $restrictAccess = (RaveHelper::isImplemented($modelClass, OwnerAccess::CLASSNAME)
                 && !User::hasPermission($modelClass::getFullAccessPermission()));
             $where = ['id' => Yii::$app->request->post('selection', [])];
 
@@ -261,7 +261,7 @@ abstract class BaseController extends \ravesoft\controllers\BaseController
     {
         if (Yii::$app->request->post('selection')) {
             $modelClass = $this->modelClass;
-            $restrictAccess = (YeeHelper::isImplemented($modelClass, OwnerAccess::CLASSNAME)
+            $restrictAccess = (RaveHelper::isImplemented($modelClass, OwnerAccess::CLASSNAME)
                 && !User::hasPermission($modelClass::getFullAccessPermission()));
 
             foreach (Yii::$app->request->post('selection', []) as $id) {

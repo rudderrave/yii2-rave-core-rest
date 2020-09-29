@@ -2,7 +2,7 @@
 
 namespace ravesoft\grid;
 
-use ravesoft\helpers\YeeHelper;
+use ravesoft\helpers\RaveHelper;
 use ravesoft\models\OwnerAccess;
 use ravesoft\models\User;
 use Yii;
@@ -126,9 +126,9 @@ class GridQuickLinks extends Widget
 
         if (!$this->defaultOptions) {
             $this->defaultOptions = [
-                'all' => ['label' => Yii::t('yee', 'All'), 'filterWhere' => []],
-                'active' => ['label' => Yii::t('yee', 'Active'), 'filterWhere' => ['status' => 1]],
-                'inactive' => ['label' => Yii::t('yee', 'Inactive'), 'filterWhere' => ['status' => 0]],
+                'all' => ['label' => Yii::t('rave', 'All'), 'filterWhere' => []],
+                'active' => ['label' => Yii::t('rave', 'Active'), 'filterWhere' => ['status' => 1]],
+                'inactive' => ['label' => Yii::t('rave', 'Inactive'), 'filterWhere' => ['status' => 0]],
             ];
         }
 
@@ -172,7 +172,7 @@ class GridQuickLinks extends Widget
             foreach ($this->options as $option) {
                 if (($this->showCount)) {
 
-                    if ((YeeHelper::isImplemented($model, OwnerAccess::CLASSNAME)
+                    if ((RaveHelper::isImplemented($model, OwnerAccess::CLASSNAME)
                         && !User::hasPermission($model::getFullAccessPermission()))
                     ) {
                         $option['filterWhere'][$model::getOwnerField()] = Yii::$app->user->identity->id;

@@ -1,6 +1,6 @@
 <?php
 
-class m150319_155941_init_yee_core extends \yii\db\Migration
+class m150319_155941_init_rave_core extends \yii\db\Migration
 {
 
     const USER_TABLE = '{{%user}}';

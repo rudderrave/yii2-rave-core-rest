@@ -11,7 +11,7 @@ use yii\web\View;
     <?php if ($this->context->enableClearFilters): ?>
         <span style="display: none" id="<?= ltrim($this->context->gridId, '#') ?>-clear-filters-btn"
               class="btn btn-sm btn-default">
-            <?= Yii::t('yee', 'Clear filters') ?>
+            <?= Yii::t('rave', 'Clear filters') ?>
         </span>
     <?php endif; ?>
 

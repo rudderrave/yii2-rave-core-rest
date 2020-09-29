@@ -36,15 +36,15 @@ class RestClient {
         if(isset($apiUrl)) {
             $this->apiUrl = $apiUrl;
         } else {
-            $this->apiUrl = Yii::$app->yee->auth_link;
+            $this->apiUrl = Yii::$app->rave->auth_link;
         }
 
         if(isset($header)) {
             $this->header = $header;
         } else {
             $this->header = [
-                RestClient::HEADER_MODULE => Yii::$app->yee->auth_module,
-                RestClient::HEADER_KEY => Yii::$app->yee->auth_key
+                RestClient::HEADER_MODULE => Yii::$app->rave->auth_module,
+                RestClient::HEADER_KEY => Yii::$app->rave->auth_key
             ];
         }
         $httpClient = null;

@@ -6,7 +6,7 @@ namespace ravesoft\helpers;
  * A lot of useful and useless stuff
  *
  */
-class YeeHelper
+class RaveHelper
 {
     /**
      * Return old good slug

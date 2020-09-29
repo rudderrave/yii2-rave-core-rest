@@ -45,10 +45,10 @@ class Setting extends \ravesoft\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'key' => Yii::t('yee', 'Key'),
-            'group' => Yii::t('yee', 'Group'),
-            'value' => Yii::t('yee', 'Value'),
-            'language' => Yii::t('yee', 'Language'),
+            'key' => Yii::t('rave', 'Key'),
+            'group' => Yii::t('rave', 'Group'),
+            'value' => Yii::t('rave', 'Value'),
+            'language' => Yii::t('rave', 'Language'),
         ];
     }
 

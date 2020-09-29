@@ -52,8 +52,8 @@ class MultilingualUrlManager extends UrlManager
             return parent::createUrl($params);
         }
 
-        if (Yii::$app->yee->isMultilingual && !empty($this->multilingualRules)) {
-            $languages = array_keys(Yii::$app->yee->displayLanguages);
+        if (Yii::$app->rave->isMultilingual && !empty($this->multilingualRules)) {
+            $languages = array_keys(Yii::$app->rave->displayLanguages);
 
             //remove incorrect language param
             if (isset($params['language']) && !in_array($params['language'], $languages)) {
@@ -74,7 +74,7 @@ class MultilingualUrlManager extends UrlManager
                     Yii::$app->language = $language;
                 }
 
-                $params['language'] = Yii::$app->yee->getDisplayLanguageShortcode(Yii::$app->language);
+                $params['language'] = Yii::$app->rave->getDisplayLanguageShortcode(Yii::$app->language);
             }
         }
 
@@ -84,7 +84,7 @@ class MultilingualUrlManager extends UrlManager
     public function getMergedRules()
     {
         $rules = $this->rules;
-        $prefix = Yii::$app->yee->isMultilingual ? $this->languagePattern . '/' : '';
+        $prefix = Yii::$app->rave->isMultilingual ? $this->languagePattern . '/' : '';
 
         foreach ($this->multilingualRules as $pattern => $route) {
             $multilingualPattern = $prefix . ltrim($pattern, '/');

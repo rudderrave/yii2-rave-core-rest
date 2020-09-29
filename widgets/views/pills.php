@@ -9,7 +9,7 @@ LanguageSelectorAsset::register($this);
 <div class="multilingual">
     <ul class="nav nav-pills">
         <?php foreach ($languages as $key => $lang) : ?>
-            <?php if (Yii::$app->yee->getDisplayLanguageShortcode($language) == $key) : ?>
+            <?php if (Yii::$app->rave->getDisplayLanguageShortcode($language) == $key) : ?>
                 <li role="language" class="active">
                     <a><?= ($display == 'code') ? $key : $lang ?></a>
                 </li>

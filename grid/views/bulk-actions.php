@@ -22,7 +22,7 @@ use yii\web\View;
         ]
     ) ?>
 
-    <?= Html::tag('span', Yii::t('yee', 'OK'), [
+    <?= Html::tag('span', Yii::t('rave', 'OK'), [
         'class' => "grid-bulk-ok-button {$this->context->okButtonClass} disabled",
         'id' => "{$this->context->gridId}-ok-button",
         'data-list' => "#{$this->context->gridId}-bulk-actions",

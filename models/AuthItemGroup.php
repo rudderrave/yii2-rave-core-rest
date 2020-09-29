@@ -21,7 +21,7 @@ class AuthItemGroup extends \ravesoft\db\ActiveRecord
      */
     public static function tableName()
     {
-        return Yii::$app->yee->auth_item_group_table;
+        return Yii::$app->rave->auth_item_group_table;
     }
 
     /**
@@ -54,10 +54,10 @@ class AuthItemGroup extends \ravesoft\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => Yii::t('yee', 'Name'),
-            'code' => Yii::t('yee', 'Code'),
-            'created_at' => Yii::t('yee', 'Created'),
-            'updated_at' => Yii::t('yee', 'Updated'),
+            'name' => Yii::t('rave', 'Name'),
+            'code' => Yii::t('rave', 'Code'),
+            'created_at' => Yii::t('rave', 'Created'),
+            'updated_at' => Yii::t('rave', 'Updated'),
         ];
     }
 

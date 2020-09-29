@@ -21,12 +21,12 @@ class LanguageSelector extends \yii\base\Widget
 
     public function run()
     {
-        if (!Yii::$app->yee->isMultilingual) {
+        if (!Yii::$app->rave->isMultilingual) {
             return;
         }
 
         $language = Yii::$app->language;
-        $languages = Yii::$app->yee->displayLanguages;
+        $languages = Yii::$app->rave->displayLanguages;
 
         list($route, $params) = Yii::$app->getUrlManager()->parseRequest(Yii::$app->getRequest());
         $params = ArrayHelper::merge(Yii::$app->getRequest()->get(), $params);

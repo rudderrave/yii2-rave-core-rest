@@ -70,7 +70,7 @@ class Menu extends ActiveRecord implements OwnerAccess
             [['created_by', 'updated_by', 'created_at', 'updated_at'], 'integer'],
             [['id'], 'string', 'max' => 64],
             [['title'], 'string', 'max' => 255],
-            [['id'], 'match', 'pattern' => '/^[a-z0-9_-]+$/', 'message' => Yii::t('yee', 'Menu ID can only contain lowercase alphanumeric characters, underscores and dashes.')],
+            [['id'], 'match', 'pattern' => '/^[a-z0-9_-]+$/', 'message' => Yii::t('rave', 'Menu ID can only contain lowercase alphanumeric characters, underscores and dashes.')],
         ];
     }
 
@@ -80,12 +80,12 @@ class Menu extends ActiveRecord implements OwnerAccess
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('yee', 'ID'),
-            'title' => Yii::t('yee', 'Title'),
-            'created_by' => Yii::t('yee', 'Created By'),
-            'updated_by' => Yii::t('yee', 'Updated By'),
-            'created_at' => Yii::t('yee', 'Created'),
-            'updated_at' => Yii::t('yee', 'Updated'),
+            'id' => Yii::t('rave', 'ID'),
+            'title' => Yii::t('rave', 'Title'),
+            'created_by' => Yii::t('rave', 'Created By'),
+            'updated_by' => Yii::t('rave', 'Updated By'),
+            'created_at' => Yii::t('rave', 'Created'),
+            'updated_at' => Yii::t('rave', 'Updated'),
         ];
     }
 

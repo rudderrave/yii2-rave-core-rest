@@ -3,7 +3,7 @@
 namespace ravesoft\models;
 
 use ravesoft\helpers\AuthHelper;
-use ravesoft\helpers\YeeHelper;
+use ravesoft\helpers\RaveHelper;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\helpers\ArrayHelper;
@@ -57,8 +57,8 @@ class User extends UserIdentity
      */
     public static function tableName()
     {
-        if(!Yii::$app->yee->auth) {
-            return Yii::$app->yee->user_table;
+        if(!Yii::$app->rave->auth) {
+            return Yii::$app->rave->user_table;
         }
         return '';
     }
@@ -81,8 +81,8 @@ class User extends UserIdentity
         return [
             [['username', 'email'], 'required'],
             ['username', 'unique'],
-            ['username', 'match', 'pattern' => Yii::$app->yee->usernameRegexp, 'message' => Yii::t('yee/auth', 'The username should contain only Latin letters, numbers and the following characters: "-" and "_".')],
-            ['username', 'match', 'not' => true, 'pattern' => Yii::$app->yee->usernameBlackRegexp, 'message' => Yii::t('yee/auth', 'Username contains not allowed characters or words.')],
+            ['username', 'match', 'pattern' => Yii::$app->rave->usernameRegexp, 'message' => Yii::t('rave/auth', 'The username should contain only Latin letters, numbers and the following characters: "-" and "_".')],
+            ['username', 'match', 'not' => true, 'pattern' => Yii::$app->rave->usernameBlackRegexp, 'message' => Yii::t('rave/auth', 'Username contains not allowed characters or words.')],
             [['username', 'email', 'bind_to_ip'], 'trim'],
             [['status', 'email_confirmed'], 'integer'],
             ['email', 'email'],
@@ -144,7 +144,7 @@ class User extends UserIdentity
     {
         try {
             Yii::$app->db->createCommand()
-                    ->insert(Yii::$app->yee->auth_assignment_table, [
+                    ->insert(Yii::$app->rave->auth_assignment_table, [
                         'user_id' => $userId,
                         'item_name' => $roleName,
                         'created_at' => time(),
@@ -184,7 +184,7 @@ class User extends UserIdentity
     public static function revokeRole($userId, $roleName)
     {
         $result = Yii::$app->db->createCommand()
-                        ->delete(Yii::$app->yee->auth_assignment_table, ['user_id' => $userId, 'item_name' => $roleName])
+                        ->delete(Yii::$app->rave->auth_assignment_table, ['user_id' => $userId, 'item_name' => $roleName])
                         ->execute() > 0;
 
         if ($result) {
@@ -271,9 +271,9 @@ class User extends UserIdentity
     public static function getStatusList()
     {
         return array(
-            self::STATUS_ACTIVE => Yii::t('yee', 'Active'),
-            self::STATUS_INACTIVE => Yii::t('yee', 'Inactive'),
-            self::STATUS_BANNED => Yii::t('yee', 'Banned'),
+            self::STATUS_ACTIVE => Yii::t('rave', 'Active'),
+            self::STATUS_INACTIVE => Yii::t('rave', 'Inactive'),
+            self::STATUS_BANNED => Yii::t('rave', 'Banned'),
         );
     }
 
@@ -285,8 +285,8 @@ class User extends UserIdentity
     {
         return array(
             self::GENDER_NOT_SET => Yii::t('yii', '(not set)'),
-            self::GENDER_MALE => Yii::t('yee', 'Male'),
-            self::GENDER_FEMALE => Yii::t('yee', 'Female'),
+            self::GENDER_MALE => Yii::t('rave', 'Male'),
+            self::GENDER_FEMALE => Yii::t('rave', 'Female'),
         );
     }
 
@@ -332,7 +332,7 @@ class User extends UserIdentity
             $exists = User::findOne(['email' => $this->email]);
 
             if ($exists AND $exists->id != $this->id) {
-                $this->addError('email', Yii::t('yee', 'This e-mail already exists'));
+                $this->addError('email', Yii::t('rave', 'This e-mail already exists'));
             }
         }
     }
@@ -347,7 +347,7 @@ class User extends UserIdentity
 
             foreach ($ips as $ip) {
                 if (!filter_var(trim($ip), FILTER_VALIDATE_IP)) {
-                    $this->addError('bind_to_ip', Yii::t('yee', "Wrong format. Enter valid IPs separated by comma"));
+                    $this->addError('bind_to_ip', Yii::t('rave', "Wrong format. Enter valid IPs separated by comma"));
                 }
             }
         }
@@ -359,29 +359,29 @@ class User extends UserIdentity
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('yee', 'ID'),
-            'username' => Yii::t('yee', 'Login'),
-            'superadmin' => Yii::t('yee', 'Superadmin'),
-            'confirmation_token' => Yii::t('yee', 'Confirmation Token'),
-            'registration_ip' => Yii::t('yee', 'Registration IP'),
-            'bind_to_ip' => Yii::t('yee', 'Bind to IP'),
-            'status' => Yii::t('yee', 'Status'),
-            'gridRoleSearch' => Yii::t('yee', 'Roles'),
-            'created_at' => Yii::t('yee', 'Created'),
-            'updated_at' => Yii::t('yee', 'Updated'),
-            'password' => Yii::t('yee', 'Password'),
-            'repeat_password' => Yii::t('yee', 'Repeat password'),
-            'email_confirmed' => Yii::t('yee', 'E-mail confirmed'),
-            'email' => Yii::t('yee', 'E-mail'),
-            'first_name' => Yii::t('yee', 'First Name'),
-            'last_name' => Yii::t('yee', 'Last Name'),
-            'skype' => Yii::t('yee', 'Skype'),
-            'phone' => Yii::t('yee', 'Phone'),
-            'gender' => Yii::t('yee', 'Gender'),
-            'birth_day' => Yii::t('yee', 'Birthday'),
-            'birth_month' => Yii::t('yee', 'Birth month'),
-            'birth_year' => Yii::t('yee', 'Birth year'),
-            'info' => Yii::t('yee', 'Short Info'),
+            'id' => Yii::t('rave', 'ID'),
+            'username' => Yii::t('rave', 'Login'),
+            'superadmin' => Yii::t('rave', 'Superadmin'),
+            'confirmation_token' => Yii::t('rave', 'Confirmation Token'),
+            'registration_ip' => Yii::t('rave', 'Registration IP'),
+            'bind_to_ip' => Yii::t('rave', 'Bind to IP'),
+            'status' => Yii::t('rave', 'Status'),
+            'gridRoleSearch' => Yii::t('rave', 'Roles'),
+            'created_at' => Yii::t('rave', 'Created'),
+            'updated_at' => Yii::t('rave', 'Updated'),
+            'password' => Yii::t('rave', 'Password'),
+            'repeat_password' => Yii::t('rave', 'Repeat password'),
+            'email_confirmed' => Yii::t('rave', 'E-mail confirmed'),
+            'email' => Yii::t('rave', 'E-mail'),
+            'first_name' => Yii::t('rave', 'First Name'),
+            'last_name' => Yii::t('rave', 'Last Name'),
+            'skype' => Yii::t('rave', 'Skype'),
+            'phone' => Yii::t('rave', 'Phone'),
+            'gender' => Yii::t('rave', 'Gender'),
+            'birth_day' => Yii::t('rave', 'Birthday'),
+            'birth_month' => Yii::t('rave', 'Birth month'),
+            'birth_year' => Yii::t('rave', 'Birth year'),
+            'info' => Yii::t('rave', 'Short Info'),
         ];
     }
 
@@ -391,7 +391,7 @@ class User extends UserIdentity
     public function getRoles()
     {
         return $this->hasMany(Role::className(), ['name' => 'item_name'])
-                        ->viaTable(Yii::$app->yee->auth_assignment_table, ['user_id' => 'id']);
+                        ->viaTable(Yii::$app->rave->auth_assignment_table, ['user_id' => 'id']);
     }
 
     /**
@@ -404,7 +404,7 @@ class User extends UserIdentity
     {
         if ($insert) {
             if (php_sapi_name() != 'cli') {
-                $this->registration_ip = YeeHelper::getRealIp();
+                $this->registration_ip = RaveHelper::getRealIp();
             }
             $this->generateAuthKey();
         } else {
@@ -569,7 +569,7 @@ class User extends UserIdentity
      */
     public function attributes()
     {
-        if(!Yii::$app->yee->auth) {
+        if(!Yii::$app->rave->auth) {
             return parent::attributes();
         }
         return [
@@ -605,7 +605,7 @@ class User extends UserIdentity
      */
     public function load($data, $formName = NULL)
     {
-        if(!Yii::$app->yee->auth) {
+        if(!Yii::$app->rave->auth) {
             return parent::load($data, $formName);
         }
 
@@ -622,7 +622,7 @@ class User extends UserIdentity
      */
     public static function findIdentity($id)
     {
-        if(!Yii::$app->yee->auth) {
+        if(!Yii::$app->rave->auth) {
             return static::findOne($id);
         }
 
@@ -644,7 +644,7 @@ class User extends UserIdentity
      */
     public static function findByUsername($username)
     {
-        if(!Yii::$app->yee->auth) {
+        if(!Yii::$app->rave->auth) {
             return static::findOne(['username' => $username, 'status' => User::STATUS_ACTIVE]);
         }
         try {

@@ -19,7 +19,7 @@ class Permission extends AbstractItem
      */
     public static function getUserPermissions($userId)
     {
-        if(!Yii::$app->yee->auth) {
+        if(!Yii::$app->rave->auth) {
             return (new DbManager())->getPermissionsByUser($userId);
         }
 
@@ -59,7 +59,7 @@ class Permission extends AbstractItem
             $route = '/' . ltrim($route, '/');
             try {
                 Yii::$app->db->createCommand()
-                        ->insert(Yii::$app->yee->auth_item_child_table, [
+                        ->insert(Yii::$app->rave->auth_item_child_table, [
                             'parent' => $permission->name,
                             'child' => $route,
                         ])->execute();

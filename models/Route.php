@@ -29,9 +29,9 @@ class Route extends AbstractItem
             return [];
         }
 
-        if(!Yii::$app->yee->auth) {
-            $auth_item = Yii::$app->yee->auth_item_table;
-            $auth_item_child = Yii::$app->yee->auth_item_child_table;
+        if(!Yii::$app->rave->auth) {
+            $auth_item = Yii::$app->rave->auth_item_table;
+            $auth_item_child = Yii::$app->rave->auth_item_child_table;
 
             $routes = (new Query)
                 ->select(['name'])
@@ -190,18 +190,18 @@ class Route extends AbstractItem
 
         if ($commonRoutes === false) {
             $commonRoutesDB = null;
-            if(!Yii::$app->yee->auth) {
+            if(!Yii::$app->rave->auth) {
                 $commonRoutesDB = (new Query())
                     ->select('child')
-                    ->from(Yii::$app->yee->auth_item_child_table)
-                    ->where(['parent' => Yii::$app->yee->commonPermissionName])
+                    ->from(Yii::$app->rave->auth_item_child_table)
+                    ->where(['parent' => Yii::$app->rave->commonPermissionName])
                     ->column();
                 $commonRoutes = Route::withSubRoutes($commonRoutesDB, ArrayHelper::map(Route::find()->asArray()->all(), 'name', 'name'));
             } else {
                 $client = new RestClient();
                 $response = $client->CreateRequest()
                     ->setUrl('permission/common-permission')
-                    ->setData(['parent' =>  Yii::$app->yee->commonPermissionName])
+                    ->setData(['parent' =>  Yii::$app->rave->commonPermissionName])
                     ->send();
                 try {
                     $commonRoutesDB = $response->getData();

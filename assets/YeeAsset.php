@@ -6,11 +6,11 @@ use yii\web\AssetBundle;
 use yii\web\JqueryAsset;
 
 /**
- * Class YeeAsset
+ * Class RaveAsset
  * 
  * @package ravesoft\core
  */
-class YeeAsset extends AssetBundle
+class RaveAsset extends AssetBundle
 {
 
     public function init()

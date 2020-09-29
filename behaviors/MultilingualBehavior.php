@@ -24,7 +24,7 @@ class MultilingualBehavior extends \omgdef\multilingual\MultilingualBehavior
     {
         parent::init();
 
-        $this->languages = Yii::$app->yee->languages;
+        $this->languages = Yii::$app->rave->languages;
         $this->defaultLanguage = Yii::$app->language;
     }
 

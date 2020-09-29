@@ -76,7 +76,7 @@ class MenuLink extends ActiveRecord implements OwnerAccess
             [['id', 'menu_id', 'parent_id'], 'string', 'max' => 64],
             [['link', 'label'], 'string', 'max' => 255],
             [['image'], 'string', 'max' => 128],
-            [['id'], 'match', 'pattern' => '/^[a-z0-9_-]+$/', 'message' => Yii::t('yee', 'Link ID can only contain lowercase alphanumeric characters, underscores and dashes.')],
+            [['id'], 'match', 'pattern' => '/^[a-z0-9_-]+$/', 'message' => Yii::t('rave', 'Link ID can only contain lowercase alphanumeric characters, underscores and dashes.')],
             ['order', 'default', 'value' => 999],
         ];
     }
@@ -87,18 +87,18 @@ class MenuLink extends ActiveRecord implements OwnerAccess
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('yee', 'ID'),
-            'menu_id' => Yii::t('yee', 'Menu'),
-            'link' => Yii::t('yee', 'Link'),
-            'label' => Yii::t('yee', 'Label'),
-            'parent_id' => Yii::t('yee', 'Parent Link'),
-            'alwaysVisible' => Yii::t('yee', 'Always Visible'),
-            'image' => Yii::t('yee', 'Icon'),
-            'order' => Yii::t('yee', 'Order'),
-            'created_by' => Yii::t('yee', 'Created By'),
-            'updated_by' => Yii::t('yee', 'Updated By'),
-            'created_at' => Yii::t('yee', 'Created'),
-            'updated_at' => Yii::t('yee', 'Updated'),
+            'id' => Yii::t('rave', 'ID'),
+            'menu_id' => Yii::t('rave', 'Menu'),
+            'link' => Yii::t('rave', 'Link'),
+            'label' => Yii::t('rave', 'Label'),
+            'parent_id' => Yii::t('rave', 'Parent Link'),
+            'alwaysVisible' => Yii::t('rave', 'Always Visible'),
+            'image' => Yii::t('rave', 'Icon'),
+            'order' => Yii::t('rave', 'Order'),
+            'created_by' => Yii::t('rave', 'Created By'),
+            'updated_by' => Yii::t('rave', 'Updated By'),
+            'created_at' => Yii::t('rave', 'Created'),
+            'updated_at' => Yii::t('rave', 'Updated'),
         ];
     }
 
@@ -126,7 +126,7 @@ class MenuLink extends ActiveRecord implements OwnerAccess
                     return $array->label . ' [' . $array->id . ']';
                 });
 
-        return ArrayHelper::merge([NULL => Yii::t('yee', 'No Parent')], $list);
+        return ArrayHelper::merge([NULL => Yii::t('rave', 'No Parent')], $list);
     }
 
     /**

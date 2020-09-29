@@ -20,7 +20,7 @@ class Role extends AbstractItem
      */
     public static function getUserRoles($userId)
     {
-        if(!Yii::$app->yee->auth) {
+        if(!Yii::$app->rave->auth) {
             return (new DbManager())->getRolesByUser($userId);
         }
 
@@ -100,7 +100,7 @@ class Role extends AbstractItem
 
         try {
             Yii::$app->db->createCommand()
-                    ->insert(Yii::$app->yee->auth_item_child_table, [
+                    ->insert(Yii::$app->rave->auth_item_child_table, [
                         'parent' => $role->name,
                         'child' => $permission->name,
                     ])->execute();
@@ -118,7 +118,7 @@ class Role extends AbstractItem
 
             try {
                 Yii::$app->db->createCommand()
-                        ->insert(Yii::$app->yee->auth_item_child_table, [
+                        ->insert(Yii::$app->rave->auth_item_child_table, [
                             'parent' => $permission->name,
                             'child' => $route,
                         ])->execute();

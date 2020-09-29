@@ -19,10 +19,10 @@ class DashboardAction extends Action
      */
     public function run()
     {
-        $this->controller->getView()->title = Yii::t('yee', 'Dashboard');
+        $this->controller->getView()->title = Yii::t('rave', 'Dashboard');
 
         if (!is_array($this->widgets)) {
-            throw new NotFoundHttpException(Yii::t('yee', 'Invalid settings for dashboard widgets.'));
+            throw new NotFoundHttpException(Yii::t('rave', 'Invalid settings for dashboard widgets.'));
         }
 
         $controllerLayout = null;
@@ -72,7 +72,7 @@ class DashboardAction extends Action
             } elseif (is_array($widget)) {
 
                 if (!isset($widget['class'])) {
-                    throw new NotFoundHttpException(Yii::t('yee', 'Invalid settings for dashboard widgets.'));
+                    throw new NotFoundHttpException(Yii::t('rave', 'Invalid settings for dashboard widgets.'));
                 }
 
                 $class = $widget['class'];
@@ -81,7 +81,7 @@ class DashboardAction extends Action
                 $content .= $class::widget($settings);
 
             } else {
-                throw new NotFoundHttpException(Yii::t('yee', 'Invalid settings for dashboard widgets.'));
+                throw new NotFoundHttpException(Yii::t('rave', 'Invalid settings for dashboard widgets.'));
             }
         }
 

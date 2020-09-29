@@ -248,11 +248,11 @@ a:focus {
 .navbar-brand b {
     font-size: 1.1em
 }
-.navbar-brand .yee-logo {
+.navbar-brand .rave-logo {
     margin: -5px 5px 0 0; 
     float:left;
     opacity: 0.9;
 }
-.navbar-brand:hover .yee-logo {
+.navbar-brand:hover .rave-logo {
     opacity: 1;
 }

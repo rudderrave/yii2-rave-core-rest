@@ -28,7 +28,7 @@ class ActiveField extends \yii\bootstrap\ActiveField
     {
         parent::init();
 
-        $languages = Yii::$app->yee->languages;
+        $languages = Yii::$app->rave->languages;
         $isCurrentLanguage = (Yii::$app->language == $this->language);
 
         if ($this->language !== NULL && ($this->model->isMultilingual() || $this->multilingual)) {

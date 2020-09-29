@@ -14,7 +14,7 @@ use yii\helpers\ArrayHelper;
 use yii\base\Component;
 
 /**
- * YeeCMS component. Contains basic settings and functions of YeeCMS.
+ * RaveCMS component. Contains basic settings and functions of RaveCMS.
  */
 class Rave extends Component
 {
@@ -255,11 +255,11 @@ class Rave extends Component
     }
 
     /**
-     * Register YeeCMS DB message translations.
+     * Register RaveCMS DB message translations.
      */
     protected function registerTranslations()
     {
-        Yii::$app->i18n->translations['yee*'] = [
+        Yii::$app->i18n->translations['rave*'] = [
             'class' => 'ravesoft\db\DbMessageSource',
             'sourceLanguage' => 'en-US',
             'enableCaching' => true,
@@ -272,11 +272,11 @@ class Rave extends Component
     protected function initLanguageOptions()
     {
         if (empty($this->languages) || !is_array($this->languages)) {
-            $this->languages[Yii::$app->language] = Yii::t('yee', 'Default Language');
+            $this->languages[Yii::$app->language] = Yii::t('rave', 'Default Language');
         }
 
         if (!in_array(Yii::$app->language, array_keys($this->languages))) {
-            throw new InvalidConfigException('Invalid language settings! Default application language should be included into `ravesoft\Yee::$languages` setting.');
+            throw new InvalidConfigException('Invalid language settings! Default application language should be included into `ravesoft\Rave::$languages` setting.');
         }
         
         if(!empty(array_diff(array_keys($this->languageRedirects), array_keys($this->languages)))){
@@ -315,7 +315,7 @@ class Rave extends Component
      */
     public function getIsMultilingual()
     {
-        $languages = Yii::$app->yee->languages;
+        $languages = Yii::$app->rave->languages;
         return count($languages) > 1;
     }
 
@@ -342,7 +342,7 @@ class Rave extends Component
             return $language;
         }
 
-        $languageRedirects = array_flip(Yii::$app->yee->languageRedirects);
+        $languageRedirects = array_flip(Yii::$app->rave->languageRedirects);
 
         return (isset($languageRedirects[$language])) ? $languageRedirects[$language] : $language;
     }
@@ -407,13 +407,13 @@ class Rave extends Component
      */
     public static function powered()
     {
-        return '<a href="http://www.yee-soft.com/" rel="external">Yee CMS</a>';
+        return '<a href="http://www.rave-soft.com/" rel="external">Rave CMS</a>';
     }
 
     /**
-     * Returns a string representing the current version of the Yee CMS Core.
+     * Returns a string representing the current version of the Rave CMS Core.
      * 
-     * @return string the version of Yee CMS Core
+     * @return string the version of Rave CMS Core
      */
     public static function getVersion()
     {

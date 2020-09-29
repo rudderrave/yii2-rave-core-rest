@@ -2,7 +2,7 @@
 
 use backend\assets\AppAsset;
 use ravesoft\assets\MetisMenuAsset;
-use ravesoft\assets\YeeAsset;
+use ravesoft\assets\RaveAsset;
 use ravesoft\models\Menu;
 use ravesoft\widgets\LanguageSelector;
 use ravesoft\widgets\Nav;
@@ -14,7 +14,7 @@ use yii\widgets\Breadcrumbs;
 /* @var $content string */
 
 AppAsset::register($this);
-$assetBundle = YeeAsset::register($this);
+$assetBundle = RaveAsset::register($this);
 MetisMenuAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -34,9 +34,9 @@ MetisMenuAsset::register($this);
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
 
         <?php
-        $logo = $assetBundle->baseUrl . '/images/yee-logo.png';
+        $logo = $assetBundle->baseUrl . '/images/rave-logo.png';
         NavBar::begin([
-            'brandLabel' => Html::img($logo, ['class' => 'yee-logo', 'alt' => 'YeeCMS']) . '<b>Yee</b> ' . Yii::t('yee', 'Control Panel'),
+            'brandLabel' => Html::img($logo, ['class' => 'rave-logo', 'alt' => 'RaveCMS']) . '<b>Rave</b> ' . Yii::t('rave', 'Control Panel'),
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
                 'class' => 'navbar-inverse navbar-static-top',
@@ -52,10 +52,10 @@ MetisMenuAsset::register($this);
         ];
 
         if (Yii::$app->user->isGuest) {
-            $menuItems[] = ['label' => Yii::t('yee', 'Login'), 'url' => ['/auth/login']];
+            $menuItems[] = ['label' => Yii::t('rave', 'Login'), 'url' => ['/auth/login']];
         } else {
             $menuItems[] = [
-                'label' => Yii::t('yee', 'Logout {username}', ['username' => Yii::$app->user->identity->username]),
+                'label' => Yii::t('rave', 'Logout {username}', ['username' => Yii::$app->user->identity->username]),
                 'url' => Yii::$app->urlManager->hostInfo . '/auth/logout',
                 'linkOptions' => ['data-method' => 'post']
             ];

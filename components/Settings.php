@@ -14,7 +14,7 @@ use yii\caching\Cache;
  *
  * Set setting:
  * ~~~
- * Yii::$app->settings->set(['general','title'],'Yee Site');
+ * Yii::$app->settings->set(['general','title'],'Rave Site');
  * ~~~
  *
  * Get setting:

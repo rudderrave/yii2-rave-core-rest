@@ -61,7 +61,7 @@ class GridBulkActions extends Widget
     {
         parent::init();
 
-        $this->promptText = $this->promptText ? $this->promptText : Yii::t('yee', '--- With selected ---');
+        $this->promptText = $this->promptText ? $this->promptText : Yii::t('rave', '--- With selected ---');
         $this->confirmationText = $this->confirmationText ? $this->confirmationText : Yii::t('yii', 'Are you sure you want to delete this item?');
     }
 
@@ -89,9 +89,9 @@ class GridBulkActions extends Widget
     {
         if (!$this->actions) {
             $this->actions = [
-                Url::to(['bulk-activate']) => Yii::t('yee', 'Activate'),
-                Url::to(['bulk-deactivate']) => Yii::t('yee', 'Deactivate'),
-                Url::to(['bulk-delete']) => Yii::t('yee', 'Delete'),
+                Url::to(['bulk-activate']) => Yii::t('rave', 'Activate'),
+                Url::to(['bulk-deactivate']) => Yii::t('rave', 'Deactivate'),
+                Url::to(['bulk-delete']) => Yii::t('rave', 'Delete'),
             ];
         }
 

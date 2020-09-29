@@ -71,7 +71,7 @@ class GridPageSize extends Widget
     {
         parent::init();
 
-        $this->text = $this->text ? $this->text : Yii::t('yee', 'Records per page');
+        $this->text = $this->text ? $this->text : Yii::t('rave', 'Records per page');
     }
 
     /**

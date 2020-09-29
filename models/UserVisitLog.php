@@ -3,7 +3,7 @@
 namespace ravesoft\models;
 
 use Ikimea\Browser\Browser;
-use ravesoft\helpers\YeeHelper;
+use ravesoft\helpers\RaveHelper;
 use Yii;
 use ravesoft\db\ActiveRecord;
 
@@ -39,7 +39,7 @@ class UserVisitLog extends ActiveRecord
         $model = new self();
         $model->user_id = $userId;
         $model->token = uniqid();
-        $model->ip = YeeHelper::getRealIp();
+        $model->ip = RaveHelper::getRealIp();
         $model->language = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) : null;
         $model->browser = $browser->getBrowser();
         $model->os = $browser->getPlatform();
@@ -78,7 +78,7 @@ class UserVisitLog extends ActiveRecord
      */
     public static function tableName()
     {
-        return Yii::$app->yee->user_visit_log_table;
+        return Yii::$app->rave->user_visit_log_table;
     }
 
     /**
@@ -103,15 +103,15 @@ class UserVisitLog extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('yee', 'ID'),
-            'token' => Yii::t('yee', 'Token'),
-            'ip' => Yii::t('yee', 'IP'),
-            'language' => Yii::t('yee', 'Language'),
-            'browser' => Yii::t('yee', 'Browser'),
-            'os' => Yii::t('yee', 'OS'),
-            'user_agent' => Yii::t('yee', 'User agent'),
-            'user_id' => Yii::t('yee', 'User'),
-            'visit_time' => Yii::t('yee', 'Visit Time'),
+            'id' => Yii::t('rave', 'ID'),
+            'token' => Yii::t('rave', 'Token'),
+            'ip' => Yii::t('rave', 'IP'),
+            'language' => Yii::t('rave', 'Language'),
+            'browser' => Yii::t('rave', 'Browser'),
+            'os' => Yii::t('rave', 'OS'),
+            'user_agent' => Yii::t('rave', 'User agent'),
+            'user_id' => Yii::t('rave', 'User'),
+            'visit_time' => Yii::t('rave', 'Visit Time'),
         ];
     }
 

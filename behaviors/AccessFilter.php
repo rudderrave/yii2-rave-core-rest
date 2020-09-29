@@ -2,7 +2,7 @@
 
 namespace ravesoft\behaviors;
 
-use ravesoft\helpers\YeeHelper;
+use ravesoft\helpers\RaveHelper;
 use ravesoft\models\OwnerAccess;
 use ravesoft\models\Route;
 use ravesoft\models\User;
@@ -72,7 +72,7 @@ class AccessFilter extends ActionFilter
             $modelClass = (isset($this->owner->modelClass)) ? $this->owner->modelClass : null;
 
             //Check access for owners
-            if ($modelClass && YeeHelper::isImplemented($modelClass, OwnerAccess::CLASSNAME) && !User::hasPermission($modelClass::getFullAccessPermission()) && $modelId) {
+            if ($modelClass && RaveHelper::isImplemented($modelClass, OwnerAccess::CLASSNAME) && !User::hasPermission($modelClass::getFullAccessPermission()) && $modelId) {
                 $model = $modelClass::findOne(['id' => $modelId]);
                 if ($model && Yii::$app->user->identity->id == $model->{$modelClass::getOwnerField()}) {
                     return true;

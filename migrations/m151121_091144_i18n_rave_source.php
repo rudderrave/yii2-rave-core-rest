@@ -2,12 +2,12 @@
 
 use ravesoft\db\SourceMessagesMigration;
 
-class m151121_091144_i18n_yee_source extends SourceMessagesMigration
+class m151121_091144_i18n_rave_source extends SourceMessagesMigration
 {
 
     public function getCategory()
     {
-        return 'yee';
+        return 'rave';
     }
 
     public function getMessages()
@@ -126,8 +126,8 @@ class m151121_091144_i18n_yee_source extends SourceMessagesMigration
             'Visible' => 1,
             'Visit Time' => 1,
             'Wrong format. Enter valid IPs separated by comma' => 1,
-            'Yee CMS Version' => 1,
-            'Yee Core Version' => 1,
+            'Rave CMS Version' => 1,
+            'Rave Core Version' => 1,
             'Yii Framework Version' => 1,
             'Your item has been updated.' => 1,
             'Your item has been created.' => 1,
