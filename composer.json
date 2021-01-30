@@ -16,7 +16,8 @@
         "omgdef/yii2-multilingual-behavior": "~2.0",
         "rmrevin/yii2-fontawesome": "~2.12",
         "tinymce/tinymce": "~4.5.0",
-        "rudderrave/yii2-recaptcha-widget": "dev-master"
+        "rudderrave/yii2-recaptcha-widget": "@dev"
+//        "rudderrave/yii2-recaptcha-widget": "dev-master"
     },
     "autoload": {
         "psr-4": {
